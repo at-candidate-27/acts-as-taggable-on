@@ -252,7 +252,8 @@ module ActsAsTaggableOn::Taggable
       # Rails 5 has merged sanitize and quote_value
       # See https://github.com/rails/rails/blob/master/activerecord/lib/active_record/sanitization.rb#L10
       def quote_value(value, column = nil)
-        ActsAsTaggableOn::Utils.active_record5? ? super(value) : super(value, column)
+        # ActsAsTaggableOn::Utils.active_record5? ? super(value) : super(value, column)
+        super(value)
       end
     end
 
